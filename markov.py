@@ -50,7 +50,7 @@ def make_text(chain1, chain2):
     how_long = (len(sentence[0]) + len(sentence[1]) + len(sentence[2]))
     toggle = 0
 
-    while how_long <= 120:
+    while how_long <= 110:
         key = (sentence[-2], sentence[-1])
         toggle += 1
         if toggle % 2 == 1:
@@ -91,7 +91,7 @@ def remove_punc(word):
 def post_to_twitter(sentence):
     print sentence
     confirm = raw_input("Tweet? Y or N: ")
-    if confirm == "Y":
+    if confirm == "Y" or confirm == "y":
         status = api.PostUpdate(sentence)
         print status.text
     else:
